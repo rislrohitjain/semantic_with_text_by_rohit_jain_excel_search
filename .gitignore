@@ -20,3 +20,5 @@ hf_token.txt
 .env
 venv/"hf_token.txt" 
 "hf_token" 
+hf_token.txt 
+hf_token 
