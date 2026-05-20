@@ -1,0 +1,13 @@
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit
+polars
+plotly
+psutil
+fastexcel
+sentence-transformers
+scikit-learn
+transformers
+torch
+torchvision
+python-dotenv
