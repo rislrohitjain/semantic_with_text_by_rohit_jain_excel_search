@@ -10,4 +10,7 @@ ENV/
 env/
 uploads/
 .env
-hf_token.txt
+hf_token
+.env
+hf_token
+.pytest_cache/
