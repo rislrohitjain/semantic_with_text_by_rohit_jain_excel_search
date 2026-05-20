@@ -201,7 +201,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Define path routing keys
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.resolve()
 STATIC_DIR = BASE_DIR / "static"
 UPLOAD_DIR = BASE_DIR / "uploads"
 PHOTO_PATH = STATIC_DIR / "images" / "RohitPhoto.jpg"
@@ -209,7 +209,12 @@ RESUME_PATH = STATIC_DIR / "Resume_Original_Rohit_Jain.pdf"
 SAMPLE_EXCEL_PATH = STATIC_DIR / "sample_for_dashboard.xlsx"
 
 # Guarantee local folders are present
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+try:
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+except Exception as e:
+    # Fallback to current working directory if parent structure is permission-locked
+    UPLOAD_DIR = Path.cwd() / "uploads"
+    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # Initialize Session State Variables
 if "filter_count" not in st.session_state:
@@ -382,7 +387,7 @@ if SAMPLE_EXCEL_PATH.exists():
     st.markdown("""
     <div class="responsive-header-container">
         <div class="header-title-wrapper">
-            <h1 class="header-title-main">⚡ Advanced Tech Business Intelligence Suite</h1>
+            <h1 class="header-title-main">⚡ Advanced Tech Excel Business Intelligence Rohit's Suite</h1>
             <div class='section-watermark'>Designed & Engineered by <a href='https://rohitjain-resume.vercel.app/' target='_blank' style='color:#06b6d4; text-decoration:none;'>Rohit Jain</a></div>
         </div>
     </div>
