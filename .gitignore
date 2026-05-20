@@ -12,5 +12,11 @@ uploads/
 .env
 hf_token
 .env
-hf_token
+hf_token.txt
 .pytest_cache/
+
+hf_token
+hf_token.txt
+.env
+venv/"hf_token.txt" 
+"hf_token" 
